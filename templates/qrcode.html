@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR code generator</title>
+</head>
+<body>
+    <form action="{{url_for('gen_qrcode')}}" method="post">
+        <label>What do you want in your QR code?</label>
+        <input type="text" name="qrdata" placeholder="write here">
+        <button type="submit">Enter</button>
+    </form>
+</body>
+</html>

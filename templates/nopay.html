@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paywall Buster</title>
+</head>
+<body>
+
+<form action="{{url_for('show_link')}}" method="post">
+    <h3>Paywall buster</h3>
+    <label>Enter the full address of the article - starting with http:// </label>
+    <br>
+    <label>For example, <i>http://time.com/6176778/jb-straubel-battery-problem/</i></label>
+    <br><br>
+    <label>Enter article URL: </label>
+    <input type="text" name="url" placeholder="type url here ">
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
