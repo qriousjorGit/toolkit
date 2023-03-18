@@ -1,13 +1,7 @@
-import requests
 from flask import Flask, render_template, url_for, request, redirect
 from nopaywall import get_free_link
 import webbrowser
 from qrgenerator import generate_qr
-
-# END_POINT = "http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100"
-# r = requests.get(END_POINT)
-#
-# print(type(r))
 
 app = Flask(__name__)
 

@@ -17,3 +17,9 @@ def generate_qr(user_data):
 # test = generate_qr("testing 12321")
 # print(type(test))
 # print (test.text)
+
+def get_card_data(last_name="", first_name="", mobile="", email=""):
+    v_card_template = f"BEGIN:VCARD\nVERSION:4.0\nN:{last_name};{first_name};;;\nTEL;type=MOBILE:{mobile}\nEMAIL:{email}\nEND:VCARD"
+    print(v_card_template)
+
+test = get_card_data("kal", "bong", mobile ="23423423")
