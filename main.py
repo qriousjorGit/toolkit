@@ -22,7 +22,7 @@ def show_link():
         #below works but too much clicking
         # return f"<h1>Paywalled link is: <a href='{data}'>{data}</a>,<br> Free link: <a target=_'_blank' href='{free_link}'>Found it!</a></h1>"
         webbrowser.open_new_tab(free_link)
-        return redirect(url_for('nopay'))
+        return redirect(url_for(free_link))
     else:
         return f"<p>Sorry, free version of the article not found</p>"
 
