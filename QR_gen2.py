@@ -9,8 +9,10 @@ def get_data(last_name="", first_name="", mobile="", email=""):
 def gen_QR(vcard):
     img = qrcode.make(vcard)
     type(img)  # qrcode.image.pil.PilImage
-    img.save("static/some_file.png")
+    try:
+        img.save("static/some_file.png")
+    except FileNotFoundError:
+        pass
 
-test = "BEGIN:VCARD\nVERSION:4.0\nN:BONG;KAL;;;\nTEL;type=MOBILE:12321\nEMAIL:BON@AOL.COM\nEND:VCARD"
-
-gen_QR(test)
+# test = "BEGIN:VCARD\nVERSION:4.0\nN:BONG;KAL;;;\nTEL;type=MOBILE:12321\nEMAIL:BON@AOL.COM\nEND:VCARD"
+# gen_QR(test)
