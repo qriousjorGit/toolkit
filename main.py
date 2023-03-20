@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect
 from nopaywall import get_free_link
 import webbrowser
-from qrgenerator import generate_qr
+from QR_gen2 import *
 
 app = Flask(__name__)
 
@@ -30,16 +30,15 @@ def show_link():
 def get_qr_info():
     return render_template("qrcode.html")
 
-@app.route('/showcode', methods=['POST'])
-def gen_qrcode():
-    data = request.form['qrdata']
-    # print(data)
-    # qr_link = generate_qr(data)
-    # print(qr_link)
-    # return f"<a href=http://api.qrserver.com/v1/create-qr-code/?data={data}&size=100x100> Link </a>"
-    return redirect(f"http://api.qrserver.com/v1/create-qr-code/?data={data}&size=100x100")
-
-
+@app.route('/show_code', methods=['POST'])
+def show_code():
+    fname = request.form['first_name']
+    lname = request.form['last_name']
+    mobile = request.form['mobile']
+    email = request.form['email']
+    vcard_data = get_data(lname, fname, mobile, email)
+    gen_QR(vcard_data)
+    return render_template("showcode.html")
 
 
 if __name__ == "__main__":
