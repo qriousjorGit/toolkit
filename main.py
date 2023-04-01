@@ -30,14 +30,20 @@ def show_link():
 def get_qr_info():
     return render_template("qrcode.html")
 
-@app.route('/show_code', methods=['POST'])
-def show_code():
+@app.route('/show_card', methods=['POST'])
+def show_vcard():
     fname = request.form['first_name']
     lname = request.form['last_name']
     mobile = request.form['mobile']
     email = request.form['email']
     vcard_data = get_data(lname, fname, mobile, email)
     gen_QR(vcard_data)
+    return render_template("showcode.html")
+
+@app.route('/show_code', methods=['POST'])
+def show_code():
+    data = request.form['qr_text']
+    gen_QR(data)
     return render_template("showcode.html")
 
 

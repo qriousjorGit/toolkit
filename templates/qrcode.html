@@ -19,10 +19,11 @@
 					<span class="image fit primary"><img src="static/images/kyiv.jpeg" alt="" /></span>
 					<div class="content">
 						<header class="major">
-							<h4>Enter your contact info (any field is optional)</h4>
+							<h4>Generate a QR code containing your contact info</h4>
+							<p>Enter your contact info (any field is optional)</p>
 						</header>
 
-                            <form action="{{url_for('show_code')}}" method="post">
+                            <form action="{{url_for('show_vcard')}}" method="post">
                             <input type="text" name="first_name" placeholder="First Name">
                             <br>
                             <input type="text" name="last_name" placeholder="Last name">
@@ -35,41 +36,29 @@
                             </form>
 
 					</div>
-					<a href="{{url_for('home')}}" class="goto-next scrolly">Back</a>
 				</div>
 			</section>
 
-<!--		&lt;!&ndash; Two &ndash;&gt;-->
-<!--			<section id="two" class="main special">-->
-<!--				<div class="container">-->
-<!--					<span class="image fit primary"><img src="static/images/kyiv-fernicular.jpeg" alt="" /></span>-->
-<!--					<div class="content">-->
-<!--						<header class="major">-->
-<!--							<h2>Stuff I do </h2>-->
-<!--						</header>-->
-<!--						<p>These are the projects I've been working on</p>-->
-<!--						<ul class="icons-grid">-->
-<!--							<li>-->
-<!--								<span class="icon solid major fa-robot"></span>-->
-<!--								<h3><a target="_blank" rel="noopener noreferrer" href="https://decommisioned-robots.onrender.com">Database</a></h3>-->
-<!--							</li>-->
-<!--							<li>-->
-<!--								<span class="icon solid major fa-search"></span>-->
-<!--								<h3> <a target="_blank" rel="noopener noreferrer" href="https://main-site-oqyy.onrender.com/vocabengine">Vocab. Engine</a></h3>-->
-<!--							</li>-->
-<!--							<li>-->
-<!--								<span class="icon solid major fa-code"></span>-->
-<!--								<h3>Coding</h3>-->
-<!--							</li>-->
-<!--							<li>-->
-<!--								<span class="icon solid major fa-coffee"></span>-->
-<!--								<h3>Coffee</h3>-->
-<!--							</li>-->
-<!--						</ul>-->
-<!--					</div>-->
-<!--					<a href="#three" class="goto-next scrolly">Next</a>-->
-<!--				</div>-->
-<!--			</section>-->
+		<!-- Two -->
+			<section id="two" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="static/images/kyiv-fernicular.jpeg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h4> Generate a QR code with a single line of text </h4>
+							<p>A QR code to your website, Zoom call, Google meeting, etc.</p>
+						</header>
+
+						 <form action="{{url_for('show_code')}}" method="post">
+                            <input type="text" name="qr_text" placeholder="Example: https://gypsycode.com">
+                            <br><br>
+                            <button type="submit">Enter</button>
+                            </form>
+
+					</div>
+					<a href="{{url_for('home')}}" class="goto-next scrolly">Back</a>
+				</div>
+			</section>
 
 <!--		&lt;!&ndash; Three &ndash;&gt;-->
 <!--			<section id="three" class="main special">-->
@@ -461,26 +450,3 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	</body>
 </html>
 
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>QR code generator</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <form action="{{url_for('show_code')}}" method="post">-->
-<!--        <h3>Enter your contact info (any field is optional)</h3>-->
-<!--        <input type="text" name="first_name" placeholder="First Name">-->
-<!--        <br>-->
-<!--        <input type="text" name="last_name" placeholder="Last name">-->
-<!--        <br>-->
-<!--        <input type="text" name="mobile" placeholder="Cellphone">-->
-<!--        <br>-->
-<!--        <input type="text" name="email" placeholder="Email">-->
-<!--        <br><br>-->
-<!--        <button type="submit">Enter</button>-->
-<!--    </form>-->
-<!--</body>-->
-<!--</html>-->

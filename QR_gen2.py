@@ -1,10 +1,10 @@
 import qrcode
 
+
 def get_data(last_name="", first_name="", mobile="", email=""):
     vcard = f"BEGIN:VCARD\nVERSION:4.0\nN:{last_name};{first_name};;;\nTEL;type=MOBILE:{mobile}\nEMAIL:{email}\nEND:VCARD"
     return vcard
 
-# print(get_data("Wong, Robin, 12343123, rwong@gmail.com"))
 
 def gen_QR(vcard):
     img = qrcode.make(vcard)
@@ -14,5 +14,15 @@ def gen_QR(vcard):
     except FileNotFoundError:
         pass
 
-# test = "BEGIN:VCARD\nVERSION:4.0\nN:BONG;KAL;;;\nTEL;type=MOBILE:12321\nEMAIL:BON@AOL.COM\nEND:VCARD"
-# gen_QR(test)
+
+#TODO code for creating a Google calendar event.  Calendar popup?  Function for time coding
+    # def get_event(event_data, title="", estart="", eend=""):
+    #     event = ""
+    #     BEGIN: VEVENT
+    #     SUMMARY: Test
+    #     DTSTART;
+    #     VALUE = DATE:20120124
+    #     DTEND;
+    #     VALUE = DATE:20120125
+    #     END: VEVENT
+    #     return event
